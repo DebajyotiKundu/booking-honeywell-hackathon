@@ -2,7 +2,7 @@ package hackathlon.honeywell.bookingHoneywellHackathon.application.dto;
 
 public class EventData {
 	private String eventName;
-	private Integer unitPrice;
+	private Double unitPrice;
 	private Integer totalBook;
 	private String promoCode;
 
@@ -14,11 +14,11 @@ public class EventData {
 		this.eventName = eventName;
 	}
 
-	public Integer getUnitPrice() {
+	public Double getUnitPrice() {
 		return unitPrice;
 	}
 
-	public void setUnitPrice(Integer unitPrice) {
+	public void setUnitPrice(Double unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 
