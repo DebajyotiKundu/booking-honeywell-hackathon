@@ -1,10 +1,14 @@
 package hackathlon.honeywell.bookingHoneywellHackathon.domain.model.promo;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Promo")
 public class Promo {
 	@Id
 	@Column(name = "PROMO_ID", nullable = false)
