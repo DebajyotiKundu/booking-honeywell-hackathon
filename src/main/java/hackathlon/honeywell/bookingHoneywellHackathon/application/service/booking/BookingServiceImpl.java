@@ -40,7 +40,7 @@ public class BookingServiceImpl implements BookingService {
 				if (promoOp.isPresent()) {
 					Promo promo = promoOp.get();
 					if (promo.getMinAmount() <= finalPrice) {
-						finalPrice = finalPrice * (((Promo) promo).getDiscount() / 100.0);
+						finalPrice = finalPrice - (finalPrice * (((Promo) promo).getDiscount() / 100.0));
 					}
 				}
 			}
