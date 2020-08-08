@@ -20,7 +20,7 @@ public class Promo {
 	private Long eventId;
 
 	@Column(name = "PROMO_CODE", nullable = false)
-	private Long promoCode;
+	private String promoCode;
 
 	@Column(name = "DISCOUNT", nullable = false)
 	private Integer discount;
@@ -44,11 +44,11 @@ public class Promo {
 		this.eventId = eventId;
 	}
 
-	public Long getPromoCode() {
+	public String getPromoCode() {
 		return promoCode;
 	}
 
-	public void setPromoCode(Long promoCode) {
+	public void setPromoCode(String promoCode) {
 		this.promoCode = promoCode;
 	}
 

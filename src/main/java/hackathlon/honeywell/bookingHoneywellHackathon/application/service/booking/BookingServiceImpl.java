@@ -38,19 +38,19 @@ public class BookingServiceImpl implements BookingService {
 			if (!CollectionUtils.isEmpty(promoList)) {
 				Optional<Promo> promoOp = promoList.stream().findFirst();
 				if (promoOp.isPresent()) {
-					finalPrice = finalPrice * (((Promo) promoOp.get()).getDiscount() / 100.0);
+					Promo promo = promoOp.get();
+					if (promo.getMinAmount() <= finalPrice) {
+						finalPrice = finalPrice * (((Promo) promo).getDiscount() / 100.0);
+					}
 				}
 			}
 		}
 
-		Booking booking = new Booking.Builder()
-				.amount(finalPrice)
-				.description(eventData.getEventName() + "-"
-				+ eventData.getPromoCode() + "-" + eventData.getTotalBook() + "-" + eventData.getUnitPrice())
-				.build();
+		Booking booking = new Booking.Builder().amount(finalPrice).description(eventData.getEventName() + "-"
+				+ eventData.getPromoCode() + "-" + eventData.getTotalBook() + "-" + eventData.getUnitPrice()).build();
 
 		bookingRepository.save(booking);
-		
+
 	}
 
 }

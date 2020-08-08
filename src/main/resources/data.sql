@@ -1,0 +1,7 @@
+insert into PROMO 
+(PROMO_ID,
+EVENT_ID,
+PROMO_CODE,
+DISCOUNT,
+MIN_AMOUNT)
+values (PROMO_ID_SEQ.nextval, 1, '123', 10, 100.00);
