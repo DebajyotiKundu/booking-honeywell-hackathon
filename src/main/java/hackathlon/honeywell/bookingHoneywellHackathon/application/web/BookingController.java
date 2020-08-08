@@ -3,6 +3,7 @@ package hackathlon.honeywell.bookingHoneywellHackathon.application.web;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ public class BookingController {
 	}
 
 	@PutMapping
-	public ResponseEntity bookEvent(EventData eventData) {
+	public ResponseEntity bookEvent(@RequestBody EventData eventData) {
 		try {
 			bookingService.bookEvent(eventData);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
