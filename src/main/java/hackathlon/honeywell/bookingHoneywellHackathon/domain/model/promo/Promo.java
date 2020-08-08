@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class Promo {
 	@Id
 	@Column(name = "PROMO_ID", nullable = false)
-	@SequenceGenerator(name = "BOOKING_ID_SEQ", sequenceName = "BOOKING_ID_SEQ", allocationSize = 100, initialValue = 1000)
-	@GeneratedValue(generator = "BOOKING_ID_SEQ")
+	@SequenceGenerator(name = "PROMO_ID_SEQ", sequenceName = "PROMO_ID_SEQ", allocationSize = 100, initialValue = 1000)
+	@GeneratedValue(generator = "PROMO_ID_SEQ")
 	private Long promoId;
 
 	@Column(name = "EVENT_ID")
