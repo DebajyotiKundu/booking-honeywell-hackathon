@@ -3,13 +3,15 @@ package hackathlon.honeywell.bookingHoneywellHackathon.application.web;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import hackathlon.honeywell.bookingHoneywellHackathon.application.dto.EventData;
 import hackathlon.honeywell.bookingHoneywellHackathon.application.exception.BookingException;
 import hackathlon.honeywell.bookingHoneywellHackathon.application.service.booking.BookingService;
 
-@RestController(("/bookEvent"))
+@RestController
+@RequestMapping("/bookEvent")
 public class BookingController {
 
 	private BookingService bookingService;
