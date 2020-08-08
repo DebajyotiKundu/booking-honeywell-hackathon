@@ -9,7 +9,7 @@ import hackathlon.honeywell.bookingHoneywellHackathon.application.dto.EventData;
 import hackathlon.honeywell.bookingHoneywellHackathon.application.exception.BookingException;
 import hackathlon.honeywell.bookingHoneywellHackathon.application.service.booking.BookingService;
 
-@RestController
+@RestController(("/bookEvent"))
 public class BookingController {
 
 	private BookingService bookingService;
@@ -18,7 +18,7 @@ public class BookingController {
 		this.bookingService = bookingService;
 	}
 
-	@PutMapping("/bookEvent")
+	@PutMapping
 	public ResponseEntity bookEvent(EventData eventData) {
 		try {
 			bookingService.bookEvent(eventData);
